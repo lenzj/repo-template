@@ -1,0 +1,13 @@
+;;;
+;;;
+#---Golang Library Section---
+
+GO ?= go
+GOFLAGS ?=
+GOSRC != find . -name '*.go'
+
+check: $(GOSRC)
+	$(GO) test $(GOFLAGS)
+
+.PHONY: check
+{{- /* vim:set noet tw=80: */ -}}

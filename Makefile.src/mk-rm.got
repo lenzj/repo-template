@@ -1,0 +1,11 @@
+;;;
+;;;
+#---Helper Macros to Remove Files---
+
+RMDIR_IF_EMPTY := sh -c '\
+if test -d $$0 && ! ls -1qA $$0 | grep -q . ; then \
+	rmdir $$0; \
+fi'
+
+RM ?= rm -f
+{{- /* vim:set noet tw=80: */ -}}

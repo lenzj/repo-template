@@ -1,0 +1,14 @@
+;;;
+;;;
+#---Generate Makefile---
+
+Makefile: template/Makefile.got
+	pgot -i ":$(RTEMPLATE)" -o $@ $<
+
+mkFile: Makefile
+
+regenMkFile:
+	pgot -i ":$(RTEMPLATE)" -o Makefile template/Makefile.got
+
+.PHONY: mkFile regenMkFile
+{{- /* vim:set noet tw=80: */ -}}

@@ -1,0 +1,14 @@
+;;;
+;;;
+#---Test/Check Section---
+
+TESTDIR = tests
+
+check: $(PNAME)
+	cd $(TESTDIR) && go test -v
+
+cleanCheck:
+	find $(TESTDIR) -name '*.result' -delete
+
+.PHONY: check cleanCheck
+{{- /* vim:set noet tw=80: */ -}}

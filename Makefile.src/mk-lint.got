@@ -1,0 +1,9 @@
+;;;
+;;;
+#---Lint Helper Target---
+
+lint:
+	@find . -path ./.git -prune -or \
+		-type f -and -not -name 'Makefile' \
+		-exec grep -Hn '<no value>' '{}' ';'
+{{- /* vim:set noet tw=80: */ -}}

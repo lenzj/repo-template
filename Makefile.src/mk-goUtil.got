@@ -1,0 +1,35 @@
+;;;
+;;;
+#---Generate Golang Utility---
+
+PREFIX ?= /usr/local
+_INSTDIR = $(DESTDIR)$(PREFIX)
+BINDIR ?= $(_INSTDIR)/bin
+GO ?= go
+GOFLAGS ?=
+
+VERSION != git describe --first-parent 2> /dev/null
+
+GOSRC != find . -name '*.go'
+
+goUtil: $(PNAME)
+
+$(PNAME): $(GOSRC)
+	$(GO) build $(GOFLAGS) \
+		-ldflags "-X main.Version=$(VERSION)" \
+		-o $@
+
+cleanGoUtil:
+	$(RM) $(PNAME)
+
+installGoUtil: $(PNAME)
+	strip $(PNAME)
+	mkdir -m755 -p $(BINDIR)
+	install -m755 $(PNAME) $(BINDIR)/$(PNAME)
+
+uninstallGoUtil:
+	$(RM) $(BINDIR)/$(PNAME)
+	$(RMDIR_IF_EMPTY) $(BINDIR)
+
+.PHONY: goUtil cleanGoUtil installGoUtil uninstallGoUtil
+{{- /* vim:set noet tw=80: */ -}}

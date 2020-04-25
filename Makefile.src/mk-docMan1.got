@@ -1,0 +1,33 @@
+;;;
+{ "pgotInclude" : [ "mk-rm.got" ] }
+;;;
+#---Generate Man Page(s)---
+
+.SUFFIXES:
+.SUFFIXES: .1 .1.scd
+
+PREFIX ?= /usr/local
+_INSTDIR = $(DESTDIR)$(PREFIX)
+MANDIR ?= $(_INSTDIR)/share/man
+
+DOCMAN := doc/$(PNAME).1
+
+.1.scd.1:
+	scdoc < $< > $@
+
+docMan: $(DOCMAN)
+
+cleanDocMan:
+	$(RM) $(DOCMAN)
+
+installMan: $(DOCMAN)
+	mkdir -m755 -p $(MANDIR)/man1
+	install -m644 doc/$(PNAME).1 $(MANDIR)/man1/$(PNAME).1
+
+uninstallMan:
+	$(RM) $(MANDIR)/man1/$(PNAME).1
+	$(RMDIR_IF_EMPTY) $(MANDIR)/man1
+	$(RMDIR_IF_EMPTY) $(MANDIR)
+
+.PHONY: installMan uninstallMan
+{{- /* vim:set noet tw=80: */ -}}

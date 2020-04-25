@@ -1,0 +1,9 @@
+;;;
+{ "contribLink" : "https://blog.lenzplace.org/about/contact.html" }
+;;;
+## Contributing
+
+If you have a bugfix, update, issue or feature enhancement the best way to reach
+me is by following the instructions in the link below.  Thank you!
+
+<{{.contribLink}}>

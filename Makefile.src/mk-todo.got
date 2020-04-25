@@ -1,0 +1,9 @@
+;;;
+;;;
+#---TODO Helper Target---
+
+todo:
+	@find . -path ./.git -prune -or \
+		-type f -and -not -name 'Makefile' \
+		-exec grep -Hn TODO '{}' ';'
+{{- /* vim:set noet tw=80: */ -}}

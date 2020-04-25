@@ -1,0 +1,38 @@
+;;;
+{
+  "rname": "repo-template",
+  "pgotInclude": [ "README.src/all.got" ]
+}
+;;;
+# {{.rname}}
+
+These are templates and examples for use in standardizing common files across
+repositories at <{{.repUrl}}>.
+
+Example use of these templates can be seen in the [template](template) folder
+of this repository.  
+
+## Dependencies
+
+* [pgot]({{.repUrl}}pgot) utility.
+
+## Generating documentation
+
+Some of the documents in this repository were generated from templates.  To
+regenerate these documents:
+
+```text
+$ make doc
+```
+
+To remove generated documents:
+
+```text
+$ make cleanDoc
+```
+
+{{template "rd-contributing" .}}
+
+{{template "rd-versioning" .}}
+
+{{template "rd-license" .}}

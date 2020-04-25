@@ -1,0 +1,6 @@
+;;;
+;;;
+## Versioning
+
+I follow the [SemVer](http://semver.org/) strategy for versioning. The latest
+version is listed in the [releases]({{.repLoc}}{{.rname}}/releases) section. 

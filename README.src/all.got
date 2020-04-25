@@ -1,0 +1,10 @@
+;;;
+{
+  "pgotInclude": [
+    "../global.got",
+    "rd-contributing.got",
+    "rd-versioning.got",
+    "rd-license.got"
+  ]
+}
+;;;

@@ -1,0 +1,7 @@
+;;;
+{ "licenseType" : "BSD two clause" }
+;;;
+## License
+
+This project is licensed under a {{.licenseType}} license - see the
+[LICENSE](LICENSE) file for details.

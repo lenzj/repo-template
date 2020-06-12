@@ -6,4 +6,6 @@ lint:
 	@find . -path ./.git -prune -or \
 		-type f -and -not -name 'Makefile' \
 		-exec grep -Hn '<no value>' '{}' ';'
+
+.PHONY: lint
 {{- /* vim:set noet tw=80: */ -}}

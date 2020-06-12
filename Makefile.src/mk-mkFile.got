@@ -2,9 +2,6 @@
 ;;;
 #---Generate Makefile---
 
-Makefile: template/Makefile.got
-	pgot -i ":$(RTEMPLATE)" -o $@ $<
-
 regenMakefile:
 	pgot -i ":$(RTEMPLATE)" -o Makefile template/Makefile.got
 

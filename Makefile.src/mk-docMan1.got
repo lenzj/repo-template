@@ -29,5 +29,5 @@ uninstallMan:
 	$(RMDIR_IF_EMPTY) $(MANDIR)/man1
 	$(RMDIR_IF_EMPTY) $(MANDIR)
 
-.PHONY: installMan uninstallMan
+.PHONY: docMan cleanDocMan installMan uninstallMan
 {{- /* vim:set noet tw=80: */ -}}

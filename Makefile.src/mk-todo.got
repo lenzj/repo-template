@@ -6,4 +6,6 @@ todo:
 	@find . -path ./.git -prune -or \
 		-type f -and -not -name 'Makefile' \
 		-exec grep -Hn TODO '{}' ';'
+
+.PHONY: todo
 {{- /* vim:set noet tw=80: */ -}}
